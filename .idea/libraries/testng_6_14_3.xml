@@ -1,0 +1,42 @@
+<component name="libraryTable">
+  <library name="testng-6.14.3">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../01-Software/Windows OS_NEW/testng-6.14.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Windows OS_NEW/selenium-server-standalone-3.141.59.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/selenium-server-3.141.59/selenium-3.141.59-nodeps.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/bcpkix-jdk15on-1.64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/bcprov-jdk15on-1.64.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/checker-qual-3.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/commons-codec-1.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/commons-compress-1.20.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/commons-io-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/commons-lang-2.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/dec-0.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/docker-java-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/docker-java-api-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/docker-java-core-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/docker-java-transport-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/docker-java-transport-httpclient5-3.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/error_prone_annotations-2.5.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/failureaccess-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/gson-2.8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/guava-30.1.1-jre.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/httpclient5-5.0.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/httpcore5-5.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/j2objc-annotations-1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/jackson-annotations-2.10.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/jackson-core-2.10.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/jackson-databind-2.10.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/jcl-over-slf4j-1.7.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/jna-5.8.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/jsoup-1.14.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/jsr305-3.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/slf4j-api-1.7.32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/WebDriverManager 5.0.2/webdrivermanager-5.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/../01-Software/selenium-server-3.141.59/selenium-3.141.59-nodeps-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Run Test Page_Object_Pattern_Level_01">
+
+    <parameter name="url" value="https://demo.nopcommerce.com/"></parameter>
+
+<!--    <test name="Run on FireFox">
+        <parameter name="browser" value="Firefox"></parameter>
+        <classes>
+            <class name="testcases.nopcommerce.TC05_Switch_Page"></class>
+        </classes>
+    </test>-->
+
+    <test name="Run on Chrome">
+        <parameter name="browser" value="Chrome"></parameter>
+        <classes>
+            <class name="testcases.nopcommerce.TC05_Switch_Page"></class>
+        </classes>
+    </test>
+
+ <!--   <test name="Run on Edge">
+        <parameter name="browser" value="Edge"></parameter>
+        <classes>
+            <class name="testcases.nopcommerce.TC05_Switch_Page"></class>
+        </classes>
+    </test>-->
+
+<!--    <test name="Run on IE">
+        <parameter name="browser" value="IE"></parameter>
+        <classes>
+            <class name="testcases.nopcommerce.TC03_Multiple_Browsers"></class>
+        </classes>
+    </test>-->
+
+</suite>
