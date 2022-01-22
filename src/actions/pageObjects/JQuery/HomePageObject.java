@@ -5,7 +5,6 @@ import interfaces.pageUIs.JQuery.HomePageUI;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,6 +15,8 @@ public class HomePageObject extends BasePage {
     public HomePageObject(WebDriver driver) {
         this.driver = driver;
     }
+
+    //https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/
 
     public void openPagingByPageNumber(String pageNumber) {
         waitForElementClickable(driver, HomePageUI.PAGINATION_PAGE_BY_NUMBER, pageNumber);
@@ -65,4 +66,42 @@ public class HomePageObject extends BasePage {
         return allRowValuesAllPage;
     }
 
+
+
+    //https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/
+    public void enterToTextboxByColumnNameAtRowNumber(String columnName, String rowNumber, String valueTextbox) {
+        // lấy index của column name
+        int columnNameindex = getElementSizes(driver, HomePageUI.COLUMN_INDEX_BY_NAME, columnName) + 1;
+        // sendkey vào rownumber
+        waitForElementVisible(driver, HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, String.valueOf(columnNameindex));
+        sendKeyToElement(driver, HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, valueTextbox, rowNumber, String.valueOf(columnNameindex));
+    }
+
+    public void selectDropDowByColumNameAtRowNumber(String columnName, String rowNumber, String selectValue) {
+        // lấy index của column name
+        int columnNameindex = getElementSizes(driver, HomePageUI.COLUMN_INDEX_BY_NAME, columnName) + 1;
+        // select vào rownumber
+        waitForElementClickable(driver, HomePageUI.DROPDOWN_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, String.valueOf(columnNameindex));
+        selectItemInDefaultDropDown(driver, HomePageUI.DROPDOWN_BY_COLUMN_INDEX_AND_ROW_INDEX, selectValue, rowNumber, String.valueOf(columnNameindex));
+    }
+
+    public void checkToCheckBoxByColumnNameAtRowNumber(String columnName, String rowNumber) {
+        // lấy index của column name
+        int columnNameindex = getElementSizes(driver, HomePageUI.COLUMN_INDEX_BY_NAME, columnName) + 1;
+        // select vào rownumber
+        waitForElementClickable(driver, HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, String.valueOf(columnNameindex));
+        checkToRadioOrCheckbox(driver, HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, String.valueOf(columnNameindex));
+    }
+
+    public void createFiveRowInput() {
+        for(int numberOfClicks = 1; numberOfClicks < 5; numberOfClicks++) {
+            waitForElementVisible(driver, HomePageUI.CREATE_ROW_BUTTON);
+            clickToElement(driver, HomePageUI.CREATE_ROW_BUTTON);
+        }
+    }
+
+    public void clickToUiButtonOfRowNumber(String rowNumber, String titleName) {
+        waitForElementClickable(driver, HomePageUI.UI_BUTTON_NAME_OF_ROW_NUMBER, rowNumber, titleName);
+        clickToElement(driver, HomePageUI.UI_BUTTON_NAME_OF_ROW_NUMBER, rowNumber, titleName);
+    }
 }

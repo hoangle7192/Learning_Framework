@@ -195,8 +195,16 @@ public abstract class BasePage {
         new Select(getWebElement(driver, locatorType)).selectByVisibleText(itemText);
     }
 
-    protected String getSelectedInDefaultDropDown(WebDriver driver, String locatorType) {
+    protected void selectItemInDefaultDropDown(WebDriver driver, String locatorType, String itemText, String... dynamicValues) {
+        new Select(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues))).selectByVisibleText(itemText);
+    }
+
+    public String getSelectedInDefaultDropDown(WebDriver driver, String locatorType) {
         return new Select(getWebElement(driver, locatorType)).getFirstSelectedOption().getText();
+    }
+
+    public String getSelectedInDefaultDropDown(WebDriver driver, String locatorType, String... dynamicValues) {
+        return new Select(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues))).getFirstSelectedOption().getText();
     }
 
     protected Boolean isDropDownMultiple(WebDriver driver, String locatorType) {
@@ -253,6 +261,12 @@ public abstract class BasePage {
         }
     }
 
+    protected void checkToRadioOrCheckbox(WebDriver driver, String locatorType, String... dynamicValues) {
+        if (!isElementSelected(driver, getDynamicXpath(locatorType, dynamicValues))) {
+            getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).click();
+        }
+    }
+
     protected void unCheckToRadioOrCheckbox(WebDriver driver, String locatorType) {
         if (isElementSelected(driver, locatorType)) {
             getWebElement(driver, locatorType).click();
@@ -269,6 +283,10 @@ public abstract class BasePage {
 
     protected Boolean isElementSelected(WebDriver driver, String locatorType) {
         return getWebElement(driver, locatorType).isSelected();
+    }
+
+    protected Boolean isElementSelected(WebDriver driver, String locatorType, String... dynamicValues) {
+        return getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)).isSelected();
     }
 
     protected Boolean isElementEnable(WebDriver driver, String locatorType) {

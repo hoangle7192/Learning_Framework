@@ -1,7 +1,6 @@
 package testcases.datatable_JQuery;
 
 import actions.commons.BaseTest;
-import actions.commons.PageGenerationManager;
 import actions.pageObjects.JQuery.HomePageObject;
 import actions.pageObjects.JQuery.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
@@ -23,6 +22,8 @@ public class TC08_DataTable_DataGrid extends BaseTest {
         homePage = PageGeneratorManager.getHomePage(driver);
     }
 
+
+    //https://www.jqueryscript.net/demo/CRUD-Data-Grid-Plugin-jQuery-Quickgrid/
     //@Test
     public void Table_01_Paging() {
         homePage.openPagingByPageNumber("10");
@@ -56,9 +57,39 @@ public class TC08_DataTable_DataGrid extends BaseTest {
         Assert.assertEquals(homePage.getValueTextboxByLabel("total", "553353"), "553353");
     }
 
-    @Test
+    //@Test
     public void Table_03_Get_All() {
         homePage.pagingAndGetAllDataEachRowAtAllPage();
+    }
+
+
+
+
+    //https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/
+
+    @Test
+    public void Table_04_Action_At_Any_Row() {
+        homePage.createFiveRowInput();
+
+        homePage.enterToTextboxByColumnNameAtRowNumber("Album", "1", "WesLife");
+        homePage.enterToTextboxByColumnNameAtRowNumber("Artist", "1", "abc");
+        homePage.enterToTextboxByColumnNameAtRowNumber("Year", "1", "2021");
+        homePage.enterToTextboxByColumnNameAtRowNumber("Price", "1", "198.6");
+        homePage.selectDropDowByColumNameAtRowNumber("Origin", "1", "Taiwan");
+        homePage.checkToCheckBoxByColumnNameAtRowNumber("With Poster?", "1");
+
+        homePage.enterToTextboxByColumnNameAtRowNumber("Album", "2", "jack97");
+        homePage.enterToTextboxByColumnNameAtRowNumber("Artist", "2", "kacj5cu");
+        homePage.enterToTextboxByColumnNameAtRowNumber("Year", "2", "2997");
+        homePage.enterToTextboxByColumnNameAtRowNumber("Price", "2", "0.5");
+        homePage.selectDropDowByColumNameAtRowNumber("Origin", "2", "Korea");
+        homePage.checkToCheckBoxByColumnNameAtRowNumber("With Poster?", "2");
+
+        homePage.clickToUiButtonOfRowNumber("1", "Insert Row Above");
+        homePage.clickToUiButtonOfRowNumber("2", "Remove Current Row");
+        homePage.clickToUiButtonOfRowNumber("3", "Move Up");
+        homePage.clickToUiButtonOfRowNumber("4", "Move Down");
+        System.out.println("a");
     }
 
     @AfterClass(alwaysRun = true)
