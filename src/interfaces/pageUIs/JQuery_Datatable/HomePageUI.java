@@ -1,4 +1,4 @@
-package interfaces.pageUIs.JQuery;
+package interfaces.pageUIs.JQuery_Datatable;
 
 public class HomePageUI {
 

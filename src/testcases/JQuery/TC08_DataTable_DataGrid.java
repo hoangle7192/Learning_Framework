@@ -1,8 +1,8 @@
-package testcases.datatable_JQuery;
+package testcases.JQuery;
 
 import actions.commons.BaseTest;
-import actions.pageObjects.JQuery.HomePageObject;
-import actions.pageObjects.JQuery.PageGeneratorManager;
+import actions.pageObjects.JQuery_Datatable.HomePageObject;
+import actions.pageObjects.JQuery_Datatable.PageGeneratorManager;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;

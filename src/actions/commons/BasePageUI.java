@@ -14,5 +14,5 @@ public class BasePageUI {
     public static final String LOGOUT_USER_LINK = "xpath=//a[text()='Log out']";
 
     public static String DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA = "xpath=//div[@class='listbox']//a[contains(.,'%s')]";
-    /*public static final String DYNAMIC_PAGE_AT_MY_ACCOUNT_AREA = "xpath=//div[contains(@class, 'account-navigation')]//a[text()='%s']";*/
+    public static final String UPLOAD_FILE = "xpath=//input[@type='file']";
 }

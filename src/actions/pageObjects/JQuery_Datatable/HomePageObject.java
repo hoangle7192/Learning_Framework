@@ -1,7 +1,7 @@
-package actions.pageObjects.JQuery;
+package actions.pageObjects.JQuery_Datatable;
 
 import actions.commons.BasePage;
-import interfaces.pageUIs.JQuery.HomePageUI;
+import interfaces.pageUIs.JQuery_Datatable.HomePageUI;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

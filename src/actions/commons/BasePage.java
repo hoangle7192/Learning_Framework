@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.List;
 import java.util.Set;
 
@@ -313,6 +314,19 @@ public abstract class BasePage {
         new Actions(driver).sendKeys(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)), key).perform();
     }
 
+    public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
+        // ĐƯờng dẫn folder upload
+        String filePath = GlobalConstants.UPLOAD_FILE_FOLDER;
+        // Đường dẫn của tất cả các file
+        StringBuilder fullFileName = new StringBuilder();
+        for(String file : fileNames) {
+            fullFileName.append(filePath).append(file).append("\n");
+        }
+        fullFileName = new StringBuilder(fullFileName.toString().trim());
+        getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(fullFileName.toString());
+    }
+
+
     /*JavaScriptExecutor*/
 
     protected Object executeForBrowser(WebDriver driver, String javaScript) {
@@ -402,13 +416,14 @@ public abstract class BasePage {
 
     protected boolean isImageLoaded(WebDriver driver, String locatorType) {
         //jsExecutor = (JavascriptExecutor) driver;
-        boolean status = (boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+        return (boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
                 getWebElement(driver, locatorType));
-        if (status) {
-            return true;
-        } else {
-            return false;
-        }
+    }
+
+    protected boolean isImageLoaded(WebDriver driver, String locatorType, String... dynamicValues) {
+        //jsExecutor = (JavascriptExecutor) driver;
+        return (boolean) ((JavascriptExecutor) driver).executeScript("return arguments[0].complete && typeof arguments[0].naturalWidth != \"undefined\" && arguments[0].naturalWidth > 0",
+                getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)));
     }
 
     /*Wait*/
