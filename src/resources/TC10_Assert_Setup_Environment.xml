@@ -2,26 +2,28 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Run Test Page_Object_Pattern_Level_01">
 
-    <parameter name="url" value="https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/"/>
+    <listeners>
+        <listener class-name="actions.commons.MethodListener"/>
+    </listeners>
 
-<!--    <test name="Run on FireFox">
-        <parameter name="browser" value="Firefox"></parameter>
+    <test name="Run on FireFox">
+        <parameter name="browser" value="Firefox"/>
         <classes>
-            <class name="testcases.nopcommerce.TC05_Switch_Page"></class>
-        </classes>
-    </test>-->
-
-    <test name="Run on Chrome">
-        <parameter name="browser" value="Chrome"/>
-        <classes>
-            <class name="testcases.JQuery.TC08_DataTable_DataGrid"/>
+            <class name="testcases.nopcommerce.TC10_Assert_Setup_Environment"/>
         </classes>
     </test>
 
- <!--   <test name="Run on Edge">
-        <parameter name="browser" value="Edge"></parameter>
+<!--    <test name="Run on Chrome">
+        <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="testcases.nopcommerce.TC05_Switch_Page"></class>
+            <class name="testcases.JQuery.TC09_Upload_Files"/>
+        </classes>
+    </test>
+
+    <test name="Run on Edge">
+        <parameter name="browser" value="Edge"/>
+        <classes>
+            <class name="testcases.JQuery.TC09_Upload_Files"/>
         </classes>
     </test>-->
 
