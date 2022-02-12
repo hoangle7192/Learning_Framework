@@ -2,6 +2,7 @@ package actions.commons;
 
 import actions.pageObjects.admin.AdminDashboardPageObject;
 import actions.pageObjects.admin.AdminLoginPageObject;
+import actions.pageObjects.facebook.FacebookLoginPageObject;
 import actions.pageObjects.users.*;
 import org.openqa.selenium.WebDriver;
 
@@ -57,5 +58,11 @@ public class PageGenerationManager {
 
     public static AdminDashboardPageObject getAdminDashBoardPage(WebDriver driver) {
         return new AdminDashboardPageObject(driver);
+    }
+
+    /*-----------------------Facebook-----------------------*/
+
+    public static FacebookLoginPageObject getFacebookLoginPage(WebDriver driver) {
+        return new FacebookLoginPageObject(driver);
     }
 }

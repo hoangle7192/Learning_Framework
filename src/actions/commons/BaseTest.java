@@ -10,6 +10,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import java.io.File;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -27,8 +28,10 @@ public abstract class BaseTest {
                 driver = new FirefoxDriver();
                 break;
             case CHROME:
+                ChromeOptions options = new ChromeOptions();
+                options.addExtensions(new File(GlobalConstants.BROWSER_EXTENSION + "UltraSurf-VPN_v1.6.0.crx"));
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
                 break;
             case EDGE:
                 WebDriverManager.edgedriver().setup();

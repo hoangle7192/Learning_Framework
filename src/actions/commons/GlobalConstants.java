@@ -13,6 +13,7 @@ public class GlobalConstants {
     public static final String DOWNLOAD_FILE_FOLDER = PROJECT_PATH + File.separator + "downloadFiles";
     public static final String BROWSER_LOG_FOLDER = PROJECT_PATH + File.separator + "browserLogs";
     public static final String DRAG_DROP_HTML5 = PROJECT_PATH + File.separator + "dragDropHTML5";
+    public static final String BROWSER_EXTENSION = PROJECT_PATH + File.separator + "browserExtension" + File.separator;
 
     // Database-account-user-pass-port
     public static final String DB_DEV_URL = "192.168.1.15:9860";
