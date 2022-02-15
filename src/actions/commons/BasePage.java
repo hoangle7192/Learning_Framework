@@ -417,7 +417,7 @@ public abstract class BasePage {
         new Actions(driver).sendKeys(getWebElement(driver, getDynamicXpath(locatorType, dynamicValues)), key).perform();
     }
 
-    public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
+/*    public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
         // ĐƯờng dẫn folder upload
         String filePath = GlobalConstants.UPLOAD_FILE_FOLDER;
         // Đường dẫn của tất cả các file
@@ -427,6 +427,18 @@ public abstract class BasePage {
         }
         fullFileName = new StringBuilder(fullFileName.toString().trim());
         getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(fullFileName.toString());
+    }*/
+
+    public void uploadMultipleFiles(WebDriver driver, String... fileNames) {
+        // ĐƯờng dẫn folder upload
+        String folderUploadFilePath = GlobalConstants.UPLOAD_FILE_FOLDER;
+        // Đường dẫn của tất cả các file
+        String fullFileName = "";
+        for(String fileName : fileNames) {
+            fullFileName = fullFileName + folderUploadFilePath + fileName + "\n";
+        }
+        fullFileName = fullFileName.trim();
+        getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(fullFileName);
     }
 
 

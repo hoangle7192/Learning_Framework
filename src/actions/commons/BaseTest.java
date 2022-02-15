@@ -1,6 +1,9 @@
 package actions.commons;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -10,13 +13,20 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import java.io.File;
+
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 public abstract class BaseTest {
 
     private WebDriver driver;
+
+    protected final Log log;
+
+    protected BaseTest() {
+        log = LogFactory.getLog(getClass());
+    }
+
 
     protected WebDriver getBrowserDriver(String browserName, String url) {
 
@@ -28,10 +38,10 @@ public abstract class BaseTest {
                 driver = new FirefoxDriver();
                 break;
             case CHROME:
-                ChromeOptions options = new ChromeOptions();
-                options.addExtensions(new File(GlobalConstants.BROWSER_EXTENSION + "UltraSurf-VPN_v1.6.0.crx"));
+               /* ChromeOptions options = new ChromeOptions();
+                options.addExtensions(new File(GlobalConstants.BROWSER_EXTENSION + "UltraSurf-VPN_v1.6.0.crx"));*/
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver(options);
+                driver = new ChromeDriver();
                 break;
             case EDGE:
                 WebDriverManager.edgedriver().setup();
@@ -104,9 +114,9 @@ public abstract class BaseTest {
         boolean pass = true;
         try {
             Assert.assertTrue(condition);
-            System.out.println(" -------------------------- PASSED -------------------------- ");
+            log.info(" -------------------------- PASSED -------------------------- ");
         } catch (Throwable e) {
-            System.out.println(" -------------------------- FAILED -------------------------- ");
+            log.info(" -------------------------- FAILED -------------------------- ");
             pass = false;
 
             // Add lỗi vào ReportNG
@@ -124,9 +134,9 @@ public abstract class BaseTest {
         boolean pass = true;
         try {
             Assert.assertFalse(condition);
-            System.out.println(" -------------------------- PASSED -------------------------- ");
+            log.info(" -------------------------- PASSED -------------------------- ");
         } catch (Throwable e) {
-            System.out.println(" -------------------------- FAILED -------------------------- ");
+            log.info(" -------------------------- FAILED -------------------------- ");
             pass = false;
 
             // Add lỗi vào ReportNG
@@ -144,10 +154,10 @@ public abstract class BaseTest {
         boolean pass = true;
         try {
             Assert.assertEquals(actual, expected);
-            System.out.println(" -------------------------- PASSED -------------------------- ");
+            log.info(" -------------------------- PASSED -------------------------- ");
         } catch (Throwable e) {
             pass = false;
-            System.out.println(" -------------------------- FAILED -------------------------- ");
+            log.info(" -------------------------- FAILED -------------------------- ");
 
             // Add lỗi vào ReportNG
             VerificationFailures.getFailures().addFailureForTest(Reporter.getCurrentTestResult(), e);

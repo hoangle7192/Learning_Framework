@@ -52,7 +52,7 @@ public class TC09_Upload_Files extends BaseTest {
 
     }
 
-   //@Test
+   @Test
     public void Upload_02_Multiple_File_Per_Time() {
         homePage.refreshPage(driver);
         // Step01: load multiple file
