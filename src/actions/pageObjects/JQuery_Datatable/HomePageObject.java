@@ -93,8 +93,8 @@ public class HomePageObject extends BasePage {
         checkToRadioOrCheckbox(driver, HomePageUI.TEXTBOX_BY_COLUMN_INDEX_AND_ROW_INDEX, rowNumber, String.valueOf(columnNameindex));
     }
 
-    public void createFiveRowInput() {
-        for(int numberOfClicks = 1; numberOfClicks < 5; numberOfClicks++) {
+    public void createFiveRowInput(int min, int max) {
+        for(int numberOfClicks = min; numberOfClicks < max; numberOfClicks++) {
             waitForElementVisible(driver, HomePageUI.CREATE_ROW_BUTTON);
             clickToElement(driver, HomePageUI.CREATE_ROW_BUTTON);
         }

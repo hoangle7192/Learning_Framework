@@ -69,7 +69,7 @@ public class TC08_DataTable_DataGrid extends BaseTest {
 
     @Test
     public void Table_04_Action_At_Any_Row() {
-        homePage.createFiveRowInput();
+        homePage.createFiveRowInput(1, 5);
 
         homePage.enterToTextboxByColumnNameAtRowNumber("Album", "1", "WesLife");
         homePage.enterToTextboxByColumnNameAtRowNumber("Artist", "1", "abc");

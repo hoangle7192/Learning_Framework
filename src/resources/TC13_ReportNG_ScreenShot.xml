@@ -4,17 +4,17 @@
 
     <listeners>
         <listener class-name="actions.commons.MethodListener"/>
-        <listener class-name="actions.reportConfig.ExtentReportListenerV2"/>
+        <listener class-name="actions.reportConfig.ReportNGListener"/>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
     </listeners>
 
     <parameter name="url" value="https://demo.nopcommerce.com/" />
 
-    <test name="Run on FireFox">
-        <parameter name="browser" value="Firefox"/>
+    <test name="Run on Chrome">
+        <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="testcases.nopcommerce.TC12_Log_ReportNG"/>
+            <class name="testcases.nopcommerce.TC13_ReportNG_ScreenShot"/>
         </classes>
     </test>
 

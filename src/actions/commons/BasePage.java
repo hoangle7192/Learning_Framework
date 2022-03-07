@@ -145,6 +145,7 @@ public abstract class BasePage {
             by = By.name(locatorType);
         } else {
             throw new RuntimeException("Locator Type Is Not Support");
+
         }
         return by;
     }
@@ -175,6 +176,7 @@ public abstract class BasePage {
     }
 
     protected void sendKeyToElement(WebDriver driver, String locatorType, String sendKeyValue) {
+        getWebElement(driver, locatorType).clear();
         getWebElement(driver, locatorType).sendKeys(sendKeyValue);
     }
 

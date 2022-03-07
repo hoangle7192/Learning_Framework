@@ -2,7 +2,10 @@ package testcases.nopcommerce;
 
 import actions.commons.BaseTest;
 import actions.commons.PageGenerationManager;
-import actions.pageObjects.users.*;
+import actions.pageObjects.users.UserCustomerInfoPageObject;
+import actions.pageObjects.users.UserHomePageObject;
+import actions.pageObjects.users.UserLoginPageObject;
+import actions.pageObjects.users.UserRegisterPageObject;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -10,7 +13,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class TC12_Log_ReportNG extends BaseTest {
+public class TC13_ReportNG_ScreenShot extends BaseTest {
 
     private WebDriver driver;
     private UserHomePageObject homePage;
@@ -59,7 +62,7 @@ public class TC12_Log_ReportNG extends BaseTest {
         registerPage.clickToRegisterButton();
 
         log.info("Register -  Step 08: Verify register success message is displayed" );
-        Assert.assertEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed..");
+        Assert.assertEquals(registerPage.getRegisteredSuccessMessage(), "Your registration completed");
 
         log.info("Register -  Step 09: Click To logout Link" );
         homePage = registerPage.clickToLogoutLink();
@@ -89,7 +92,8 @@ public class TC12_Log_ReportNG extends BaseTest {
         Assert.assertEquals(customerInfoPage.getLastNameTextBoxValue(), lastName);
 
         log.info("Login -  Step 08: Verify EmailTextBoxValue Equal with '" + emailAddress + "'");
-        Assert.assertEquals(customerInfoPage.getEmailTextBoxValue(), emailAddress + "bug");
+        Assert.assertEquals(customerInfoPage.getEmailTextBoxValue(), emailAddress);
+        Assert.assertEquals(customerInfoPage.getEmailTextBoxValue(), "abc");
     }
 
     @AfterClass(alwaysRun = true)

@@ -27,8 +27,9 @@ public class TC06_Switch_Role_User extends BaseTest {
     private String adminEmail, adminPassword;
 
 
-    @Parameters({"browser"})
+
     @BeforeClass
+    @Parameters({"browser"})
     public void beforeClass(String browserName) {
         // 1. Quyen User -> Mo trang Homepage
         driver = getBrowserDriver(browserName, GlobalConstants.USER_URL);

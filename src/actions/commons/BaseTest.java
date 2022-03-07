@@ -61,6 +61,10 @@ public abstract class BaseTest {
         return driver;
     }
 
+    public WebDriver getDriverInstance() {
+        return this.driver;
+    }
+
     protected WebDriver getBrowserDriverifelse(String browserName, String enviromentName) {
 
         BrowserList browser = BrowserList.valueOf(browserName.toUpperCase());
