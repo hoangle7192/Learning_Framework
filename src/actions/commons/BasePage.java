@@ -46,6 +46,17 @@ public abstract class BasePage {
         driver.navigate().refresh();
     }
 
+    public Set<Cookie> getAllCookies(WebDriver driver) {
+        return driver.manage().getCookies();
+    }
+
+    public void setCookies(WebDriver driver, Set<Cookie> cookies ) {
+        for(Cookie cookie : cookies) {
+            driver.manage().addCookie(cookie);
+        }
+        sleepInSecond(3);
+    }
+
     protected Alert waitForAlertPresence(WebDriver driver) {
         return new WebDriverWait(driver, longTimeout).until(ExpectedConditions.alertIsPresent());
     }
@@ -489,6 +500,12 @@ public abstract class BasePage {
     protected void scrollToElement(WebDriver driver, String locatorType) {
         //jsExecutor = (JavascriptExecutor) driver;
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, locatorType));
+    }
+
+    protected String getElementValueByJSXpath(WebDriver driver, String xpathLocator) {
+        //jsExecutor = (JavascriptExecutor) driver;
+        xpathLocator = xpathLocator.replace("xpath=", "");
+        return (String) ((JavascriptExecutor) driver).executeScript("return $(document.evaluate(\"" + xpathLocator + "\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).val()");
     }
 
     protected void sendKeyToElementByJS(WebDriver driver, String locatorType, String sendKeyValue) {
