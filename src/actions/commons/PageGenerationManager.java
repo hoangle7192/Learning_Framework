@@ -3,6 +3,8 @@ package actions.commons;
 import actions.pageObjects.admin.AdminDashboardPageObject;
 import actions.pageObjects.admin.AdminLoginPageObject;
 import actions.pageObjects.facebook.FacebookLoginPageObject;
+import actions.pageObjects.swagLabs.InventoryPageObject;
+import actions.pageObjects.swagLabs.LoginPageObject;
 import actions.pageObjects.users.*;
 import org.openqa.selenium.WebDriver;
 
@@ -65,4 +67,15 @@ public class PageGenerationManager {
     public static FacebookLoginPageObject getFacebookLoginPage(WebDriver driver) {
         return new FacebookLoginPageObject(driver);
     }
+
+    /*-----------------------SwagLabs-----------------------*/
+
+    public static LoginPageObject getLoginPage(WebDriver driver) {
+        return new LoginPageObject(driver);
+    }
+
+    public static InventoryPageObject getInventoryPage(WebDriver driver) {
+        return new InventoryPageObject(driver);
+    }
+
 }
