@@ -48,6 +48,14 @@
       <root url="jar://$USER_HOME$/Downloads/Extent Report V2/sqlite-jdbc-3.8.11.1.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/Extent Report V2/freemarker-2.3.23.jar!/" />
       <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/Extent Report V2/extentreports-2.41.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/Java Faker/commons-lang3-3.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/Java Faker/generex-1.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/Java Faker/javafaker-1.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/Java Faker/snakeyaml-1.23.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/Jackson/jackson-annotations-2.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/Jackson/jackson-core-2.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/Jackson/jackson-databind-2.10.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../01-Software/Lib all/mssql-jdbc-10.2.0.jre8.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
