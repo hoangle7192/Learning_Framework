@@ -4,12 +4,12 @@
 
     <parameter name="url" value="https://demo.nopcommerce.com/"></parameter>
 
-    <test name="Run on FireFox">
+<!--    <test name="Run on FireFox">
         <parameter name="browser" value="Firefox"></parameter>
         <classes>
             <class name="testcases.nopcommerce.TC01_Setup_Enviroment"></class>
         </classes>
-    </test>
+    </test>-->
 
     <test name="Run on Chrome">
         <parameter name="browser" value="Chrome"></parameter>
@@ -18,12 +18,12 @@
         </classes>
     </test>
 
-    <test name="Run on Edge">
+<!--    <test name="Run on Edge">
         <parameter name="browser" value="Edge"></parameter>
         <classes>
             <class name="testcases.nopcommerce.TC01_Setup_Enviroment"></class>
         </classes>
-    </test>
+    </test>-->
 
 <!--    <test name="Run on IE">
         <parameter name="browser" value="IE"></parameter>

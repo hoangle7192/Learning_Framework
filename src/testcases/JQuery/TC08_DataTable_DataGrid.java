@@ -57,7 +57,7 @@ public class TC08_DataTable_DataGrid extends BaseTest {
         Assert.assertEquals(homePage.getValueTextboxByLabel("total", "553353"), "553353");
     }
 
-    //@Test
+    @Test
     public void Table_03_Get_All() {
         homePage.pagingAndGetAllDataEachRowAtAllPage();
     }
@@ -67,7 +67,7 @@ public class TC08_DataTable_DataGrid extends BaseTest {
 
     //https://www.jqueryscript.net/demo/jQuery-Dynamic-Data-Grid-Plugin-appendGrid/
 
-    @Test
+    //@Test
     public void Table_04_Action_At_Any_Row() {
         homePage.createFiveRowInput(1, 5);
 

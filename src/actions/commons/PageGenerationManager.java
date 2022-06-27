@@ -3,6 +3,8 @@ package actions.commons;
 import actions.pageObjects.admin.AdminDashboardPageObject;
 import actions.pageObjects.admin.AdminLoginPageObject;
 import actions.pageObjects.facebook.FacebookLoginPageObject;
+import actions.pageObjects.iLovePdf.DownLoadPageObject;
+import actions.pageObjects.iLovePdf.WordToPdfPageObject;
 import actions.pageObjects.swagLabs.InventoryPageObject;
 import actions.pageObjects.swagLabs.LoginPageObject;
 import actions.pageObjects.users.*;
@@ -76,6 +78,16 @@ public class PageGenerationManager {
 
     public static InventoryPageObject getInventoryPage(WebDriver driver) {
         return new InventoryPageObject(driver);
+    }
+
+    /*-----------------------IlovePDF-----------------------*/
+
+    public static WordToPdfPageObject getWordToPDFPage(WebDriver driver) {
+        return new WordToPdfPageObject(driver);
+    }
+
+    public static DownLoadPageObject getDownLoadPage(WebDriver driver) {
+        return new DownLoadPageObject(driver);
     }
 
 }

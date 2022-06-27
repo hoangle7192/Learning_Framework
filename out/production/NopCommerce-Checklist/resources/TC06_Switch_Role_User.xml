@@ -12,9 +12,9 @@
     </test>-->
 
     <test name="Run on Chrome">
-        <parameter name="browser" value="Chrome"></parameter>
+        <parameter name="browser" value="Chrome"/>
         <classes>
-            <class name="testcases.nopcommerce.TC06_Switch_Role_User"></class>
+            <class name="testcases.nopcommerce.TC06_Switch_Role_User"/>
         </classes>
     </test>
 

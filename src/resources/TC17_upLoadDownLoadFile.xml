@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Run Test Page_Object_Pattern_Level_01">
+
+    <listeners>
+        <listener class-name="actions.reportConfig.ExtentTestListener_Screen_V2"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+    </listeners>
+
+    <parameter name="url" value="https://www.ilovepdf.com/word_to_pdf" />
+
+    <test name="Run on Chrome">
+        <parameter name="browser" value="Chrome"/>
+        <classes>
+            <class name="testcases.uploadDownload.TC17_upLoadDownLoadFile"/>
+        </classes>
+    </test>
+
+<!--    <test name="Run on FireFox">
+        <parameter name="browser" value="Firefox"/>
+        <classes>
+            <class name="testcases.facebook.TC11_Element_Undisplayed"/>
+        </classes>
+    </test>
+
+    <test name="Run on Edge">
+        <parameter name="browser" value="Edge"/>
+        <classes>
+            <class name="testcases.JQuery.TC09_Upload_Files"/>
+        </classes>
+    </test>
+
+    <test name="Run on IE">
+        <parameter name="browser" value="IE"></parameter>
+        <classes>
+            <class name="testcases.nopcommerce.TC03_Multiple_Browsers"></class>
+        </classes>
+    </test>-->
+
+</suite>

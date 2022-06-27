@@ -10,6 +10,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -457,6 +458,32 @@ public abstract class BasePage {
         }
         fullFileName = fullFileName.trim();
         getWebElement(driver, BasePageUI.UPLOAD_FILE).sendKeys(fullFileName);
+    }
+
+    public void deleteAllFileInFolder() {
+        try {
+            String pathFolderDownload = GlobalConstants.DOWNLOAD_FILE_FOLDER;
+            File file = new File(pathFolderDownload);
+            File[] listOfFiles = file.listFiles();
+            for (File listOfFile : listOfFiles) {
+                if (listOfFile.isFile()) {
+                    new File(listOfFile.toString()).delete();
+                }
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    public boolean isFileDownloaded(String fileName) {
+        File dir = new File(GlobalConstants.DOWNLOAD_FILE_FOLDER);
+        File[] dirContents = dir.listFiles();
+        for(File dirContent : dirContents) {
+            if(dirContent.getName().contains(fileName)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

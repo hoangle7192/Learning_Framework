@@ -15,6 +15,7 @@ import org.testng.Reporter;
 
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
@@ -41,8 +42,13 @@ public abstract class BaseTest {
             case CHROME:
                /* ChromeOptions options = new ChromeOptions();
                 options.addExtensions(new File(GlobalConstants.BROWSER_EXTENSION + "UltraSurf-VPN_v1.6.0.crx"));*/
+                HashMap<String, Object> chromePrefs = new HashMap<>();
+                chromePrefs.put("profile.default_content_settings.popups", 0);
+                chromePrefs.put("download.default_directory", GlobalConstants.DOWNLOAD_FILE_FOLDER);
+                ChromeOptions options = new ChromeOptions();
+                options.setExperimentalOption("prefs", chromePrefs);
                 WebDriverManager.chromedriver().setup();
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(options);
                 break;
             case EDGE:
                 WebDriverManager.edgedriver().setup();
